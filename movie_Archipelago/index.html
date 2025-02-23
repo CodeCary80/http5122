@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Archipelago</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:wght@600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 class="title">Movie Archipelago</h1>
+        <p class="tagline">Your Movie Journal</p>
+    </header>
+
+    <main>
+   
+        <div class="buttonDisplayField">
+            <button id="myFav" class="button">Favorite</button>
+            <button id="watched" class="button">Watched</button>
+            <button id="wish" class="button">Wish List</button>
+            <button id="newMovies" class="button">Add New Movies</button>
+            <button id="activities" class="button">Activities</button>
+            <button id="buttonColors" class="button">Customize</button>
+        </div>
+
+
+
+        <section id="favMoviesSection" class="movie-section" style="display:none;">
+            <h2>Favorite Movies</h2>
+            <div id="favMoviesList" class="movie-list"></div>
+        </section>
+
+        <section id="watchedMoviesSection" class="movie-section" style="display:none;">
+            <h2>Watched Movies</h2>
+            <div id="watchedMoviesList" class="movie-list"></div>
+        </section>
+
+        <section id="wishlistSection" class="movie-section" style="display:none;">
+            <h2>Wish List</h2>
+            <div id="wishlistMoviesList" class="movie-list"></div>
+        </section>
+
+    
+        <section id="addMovieSection" class="movie-section" style="display:none;">
+            <h2>Add New Movie</h2>
+            <form id="newMovieForm">
+                <div class="form-group">
+                    <label for="movieName">Movie Name:</label>
+                    <input type="text" id="movieName" required>
+                </div>
+                <div class="form-group">
+                    <label for="movieCover">Movie Cover (URL):</label>
+                    <input type="url" id="movieCover">
+                </div>
+                <div class="form-group">
+                    <label for="movieRating">Rating (1-5):</label>
+                    <input type="number" id="movieRating" min="1" max="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="movieDescription">Description:</label>
+                    <textarea id="movieDescription"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="movieComment">Comment:</label>
+                    <textarea id="movieComment"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Add to:</label>
+                    <select id="movieList">
+                        <option value="wishlist">Wish List</option>
+                        <option value="watched">Watched</option>
+                        <option value="favorite">Favorite</option>
+                    </select>
+                </div>
+                <button type="submit">Add Movie</button>
+            </form>
+        </section>
+
+     
+        <section id="activitiesSection" class="movie-section" style="display:none;">
+            <h2>Activities</h2>
+            <div id="todayActivities">Today you: </div>
+            <div id="previousActivities">Previously, you: </div>
+        </section>
+
+       
+        <div id="movieDetailModal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2 id="modalMovieName"></h2>
+                <img id="modalMovieCover" src="" alt="Movie Cover">
+                <p id="modalMovieRating"></p>
+                <p id="modalMovieDescription"></p>
+                <p id="modalMovieComment"></p>
+                <div class="modal-actions">
+                    <button id="editMovieBtn">Edit</button>
+                    <button id="deleteMovieBtn">Delete</button>
+                </div>
+            </div>
+        </div>
+
+
+        <section id="customizeSection" class="customize-section" style="display:none;">
+            <h2>Customize Button Colors</h2>
+            <div class="color-customize-grid">
+                <div class="color-picker-group">
+                    <label>Favorite Button:</label>
+                    <input type="color" id="favColor">
+                </div>
+                <div class="color-picker-group">
+                    <label>Watched Button:</label>
+                    <input type="color" id="watchedColor">
+                </div>
+                <div class="color-picker-group">
+                    <label>Wish List Button:</label>
+                    <input type="color" id="wishColor">
+                </div>
+                <div class="color-picker-group">
+                    <label>New Movies Button:</label>
+                    <input type="color" id="newMoviesColor">
+                </div>
+                <div class="color-picker-group">
+                    <label>Activities Button:</label>
+                    <input type="color" id="activitiesColor">
+                </div>
+                <div class="color-picker-group">
+                    <label>Customize Button:</label>
+                    <input type="color" id="customizeColor">
+                </div>
+            </div>
+            <div class="color-actions">
+                <button id="saveColorBtn">Save Colors</button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
